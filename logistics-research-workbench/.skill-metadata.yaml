@@ -1,0 +1,62 @@
+examples:
+  - id: add-city
+    title:
+      zh: 调研新城市并录入工作台
+      en: Research a new city and add it
+    description:
+      zh: 为指定城市调研公开数据并录入已发布的调研计划工作台
+      en: Research public data for a city and add it to the published workbench
+    prompt:
+      zh: |-
+        请为{{城市名}}调研以下公开数据并录入调研计划工作台知识库：
+        物流枢纽定位、快递业务量与收入（邮政管理局统计）、主导产业及规模、物流园区（现存/在建/规划）、各快递品牌分拨节点、政府部门调研要点、各产业代表企业名单（含区县级地点和推荐度分级）。
+        完成深度分析（用仓需求企业排序、园区定位建议）后更新工作台网页并重新发布。
+      en: |-
+        Please research the following public data for {{city name}} and add it to the survey plan workbench knowledge base:
+        logistics hub positioning, express parcel volume and revenue (postal administration statistics), core industries and scale, logistics parks (existing/under construction/planned), express brand network nodes, government department data requests, and representative enterprises per industry (with county-level location and recommendation tier).
+        Complete the deep analysis (warehouse-demand firm ranking, park positioning advice), then update and republish the workbench page.
+
+  - id: build-workbench
+    title:
+      zh: 新建调研计划工作台
+      en: Build a new survey plan workbench
+    description:
+      zh: 按固定蓝图从零构建并发布6步向导式调研计划工作台
+      en: Build and publish the 6-step wizard survey plan workbench from scratch
+    prompt:
+      zh: |-
+        请按调研计划工作台蓝图构建网页并发布：首城为{{城市名}}，包含6步向导（项目基本信息、城市总览、产业勾选、物流园区勾选、快递节点勾选、政府部门清单）、主备选企业名单（N家主选+约N/2家备选、可调换）、浏览器本地进度保存、Word版调研计划导出。
+        参考文档（可选）：{{调研计划docx路径}}
+      en: |-
+        Please build and publish the survey plan workbench web page with {{city name}} as the first city: a 6-step wizard (project info, city overview, industry selection, logistics park selection, express node selection, government department checklist), primary/backup enterprise lists (N primary + ~N/2 backup, swappable), browser-local progress saving, and Word survey plan export.
+        Reference document (optional): {{survey plan docx path}}
+
+  - id: reuse-doc
+    title:
+      zh: 从参考文档复用数据
+      en: Reuse data from a reference document
+    description:
+      zh: 解析用户提供的调研计划docx，复用企业名单、园区、政府部门内容
+      en: Parse a user-provided survey plan docx and reuse its enterprise, park, and department data
+    prompt:
+      zh: |-
+        请解析这份调研计划参考文档：{{docx文件路径}}
+        将其中的拟调研企业名单（含类别与所在区县）、物流园区清单（现存/在建/规划）、政府部门调研内容、快递品牌清单复用到{{城市名}}的工作台知识库中，并联网补充产业规模、快递单量、枢纽定位等量化数据。
+      en: |-
+        Please parse this survey plan reference document: {{docx file path}}
+        Reuse its target enterprise list (with category and county), logistics park inventory (existing/under construction/planned), government department data requests, and express brand list into the workbench knowledge base for {{city name}}, and supplement quantitative data (industry scale, express volume, hub positioning) via web research.
+
+  - id: update-app
+    title:
+      zh: 调整工作台功能
+      en: Adjust workbench features
+    description:
+      zh: 修改已有工作台的步骤内容、勾选规则、导出格式等
+      en: Modify steps, selection rules, or export format of the existing workbench
+    prompt:
+      zh: |-
+        调研计划工作台需要调整：{{描述调整内容，例如：导出格式、步骤顺序、勾选规则、新增数据维度}}
+        请更新工作台源码并重新发布，验证原有勾选数据不丢失。
+      en: |-
+        The survey plan workbench needs adjustments: {{describe the change, e.g. export format, step order, selection rules, new data dimensions}}
+        Please update the workbench source, republish it, and verify existing selection data is not lost.
